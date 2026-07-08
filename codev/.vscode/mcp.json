@@ -1,0 +1,56 @@
+{
+	"inputs": [
+		{
+			"id": "ado_repo",
+			"type": "promptString",
+			"description": "Azure DevOps repository name (e.g. 'Xbox.Xbet.Service')"
+		}
+	],
+	"servers": {
+		"microsoft-docs-mcp": {
+			"type": "http",
+			"url": "https://learn.microsoft.com/api/mcp"
+		},
+		"ado": {
+			"tools": [
+				"*"
+			],
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@azure-devops/mcp",
+				"microsoft"
+			]
+		},
+		"icm-mcp": {
+			"type": "http",
+			"url": "https://icm-mcp-prod.azure-api.net/v1/",
+			"headers": {
+				"X-User-Alias": "<user-alias>"
+			}
+		},
+		"azure-mcp": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@azure/mcp@latest",
+				"server",
+				"start"
+			],
+			"env": {
+				"AZURE_SUBSCRIPTION_ID": "b5295a19-edeb-46f4-9bd7-51414b43b83a"
+			}
+		},
+		"playwright": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@playwright/mcp@latest",
+				"--browser=msedge"
+			]
+		}
+	}
+}
