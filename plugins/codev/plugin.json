@@ -1,0 +1,21 @@
+{
+  "name": "codev",
+  "description": "Guided four-stage development workflow (Understand -> Plan -> Implement -> Review) that takes a task brief, clarifies requirements, hands off to plan mode, drives the implementation, and runs a review.",
+  "version": "1.0.0",
+  "author": {
+    "name": "cottonstartiet",
+    "email": "cottonstartiet@users.noreply.github.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "workflow",
+    "development",
+    "planning",
+    "code-review",
+    "guided",
+    "developer-tools"
+  ],
+  "skills": [
+    "skills/"
+  ]
+}

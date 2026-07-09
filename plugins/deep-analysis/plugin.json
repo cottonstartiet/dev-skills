@@ -1,0 +1,22 @@
+{
+  "name": "deep-analysis",
+  "description": "Performs deep codebase, architecture, or general-purpose analysis from a user prompt and generates a polished, self-contained light-theme HTML report of the findings.",
+  "version": "1.0.0",
+  "author": {
+    "name": "cottonstartiet",
+    "email": "cottonstartiet@users.noreply.github.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "analysis",
+    "architecture",
+    "code-quality",
+    "report",
+    "html",
+    "visualization",
+    "developer-tools"
+  ],
+  "skills": [
+    "skills/"
+  ]
+}
