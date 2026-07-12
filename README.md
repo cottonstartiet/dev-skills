@@ -118,7 +118,6 @@ under [`tools/`](tools) and are installed with a menu-driven installer.
 | [**worktree**](tools/worktree) | `tr` | Create, inspect, branch, push, and remove git worktrees safely, using a `users/<alias>/<name>` branch convention with guardrails on destructive/remote actions. |
 | [**sync**](tools/sync) | `sync` | Preview and safely update the current branch (fast-forward by default; `-Rebase`/`-Merge` opt-in; never force). |
 | [**clean**](tools/clean) | `clean` | Report and prune stale local branches (merged or gone-upstream); never deletes current/protected/unmerged work without confirmation. |
-| [**commit**](tools/commit) | `commit` | Compose and create a local Conventional Commit; validates the message and never pushes. |
 | [**prprep**](tools/prprep) | `prprep` | Draft a PR description + checklist from the diff. Does **not** create the PR or push. |
 | [**changelog**](tools/changelog) | `changelog` | Generate a Keep a Changelog-style changelog from Conventional Commits; dry-run unless `-Write`. |
 

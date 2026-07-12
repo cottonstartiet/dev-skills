@@ -1,9 +1,0 @@
-{
-  "name": "commit",
-  "command": "commit",
-  "script": "commit.ps1",
-  "version": "1.0.0",
-  "summary": "Compose and create local Conventional Commits safely.",
-  "description": "A Conventional Commit helper that validates type, scope, subject length, optional body, and breaking-change footer, then commits local staged changes. It can optionally run git add -A, but never pushes or creates branches.",
-  "requires": "PowerShell 7+ (pwsh) and git on PATH"
-}
