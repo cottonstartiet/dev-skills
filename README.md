@@ -7,6 +7,9 @@ Each plugin bundles one or more **skills** (reusable prompts/workflows Copilot l
 This repository is the marketplace: its [`.github/plugin/marketplace.json`](.github/plugin/marketplace.json)
 indexes every plugin so Copilot CLI can discover and install them.
 
+It also ships standalone **[command-line tools](tools)** — PowerShell scripts you install into your
+shell and run directly (see [Tools](#-tools)).
+
 ---
 
 ## 📚 Skill Index
@@ -104,6 +107,29 @@ copilot --plugin-dir ./plugins/codev
 
 ---
 
+## 🧰 Tools
+
+Alongside the Copilot CLI plugins, this repo ships standalone **command-line tools** — plain
+PowerShell scripts you install into your shell and run directly (no Copilot required). They live
+under [`tools/`](tools) and are installed with a menu-driven installer.
+
+| Tool | Command | What it does |
+|------|---------|--------------|
+| [**worktree**](tools/worktree) | `tr` | Create, inspect, branch, push, and remove git worktrees safely, using a `users/<alias>/<name>` branch convention with guardrails on destructive/remote actions. |
+
+**Install** (from the repo root) — run with no arguments for an interactive menu, or target a tool:
+
+```powershell
+pwsh -NoProfile -File tools/install.ps1              # interactive menu
+pwsh -NoProfile -File tools/install.ps1 -Tool worktree
+```
+
+Installing adds a small function (e.g. `tr`) to your PowerShell profile so the command works in
+every new session. Restart PowerShell afterwards. Uninstall with `-Uninstall`. See
+[`tools/README.md`](tools/README.md) for all flags and how to add a new tool.
+
+---
+
 ## 🗂️ Repository Layout
 
 ```
@@ -124,6 +150,14 @@ dev-skills/
 │       └── skills/
 │           └── deep-analysis/
 │               └── SKILL.md
+├── tools/                           # standalone CLI tools (installed into your shell)
+│   ├── install.ps1                  #   menu-driven installer
+│   ├── README.md
+│   └── worktree/                    #   a tool
+│       ├── tool.json                #     manifest (name, command, script)
+│       ├── worktree.ps1
+│       ├── README.md
+│       └── tests/
 ├── raw/                             # staging area for skills not yet packaged
 └── README.md
 ```
@@ -132,6 +166,8 @@ dev-skills/
   each plugin with its `source`, `version`, and `description`.
 - Each **plugin** folder under `plugins/` has a `plugin.json` manifest (declaring its `skills`
   and/or `agents`), a `README.md`, and its skill content under `skills/<name>/SKILL.md`.
+- Each **tool** folder under `tools/` has a `tool.json` manifest (declaring its `command` and
+  `script`) and a `README.md`; `tools/install.ps1` discovers and installs them.
 - **`raw/`** holds imported skills that have not yet been packaged into plugins.
 
 ---

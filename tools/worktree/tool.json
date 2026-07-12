@@ -1,0 +1,9 @@
+{
+  "name": "worktree",
+  "command": "tr",
+  "script": "worktree.ps1",
+  "version": "1.0.0",
+  "summary": "Create, inspect, branch, push, and remove git worktrees safely.",
+  "description": "A git-worktree helper that wraps common actions (create/list/status/branch/health/push/remove/switch) behind a single 'tr' command. Enforces a users/<alias>/<name> branch convention, repairs detached HEADs, and guards destructive/remote actions with typed confirmation.",
+  "requires": "PowerShell 7+ (pwsh) and git on PATH"
+}
