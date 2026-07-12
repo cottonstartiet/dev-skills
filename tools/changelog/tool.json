@@ -1,0 +1,9 @@
+{
+  "name": "changelog",
+  "command": "changelog",
+  "script": "changelog.ps1",
+  "version": "1.0.0",
+  "summary": "Generate a Keep a Changelog-style changelog from Conventional Commits.",
+  "description": "A standalone PowerShell CLI that reads git history, groups Conventional Commit subjects into changelog sections, and either prints the generated block or prepends it to a changelog file. It is read-only by default and never tags, commits, pushes, or publishes.",
+  "requires": "PowerShell 7+ (pwsh) and git on PATH"
+}

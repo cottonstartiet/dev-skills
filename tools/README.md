@@ -9,6 +9,11 @@ from your terminal as short commands.
 | Tool | Command | What it does |
 |------|---------|--------------|
 | [**worktree**](worktree) | `tr` | Create, inspect, branch, push, and remove git worktrees safely, using a `users/<alias>/<name>` branch convention with guardrails on destructive/remote actions. |
+| [**sync**](sync) | `sync` | Preview and safely update the current branch (fast-forward by default; `-Rebase`/`-Merge` opt-in; never force). |
+| [**clean**](clean) | `clean` | Report and prune stale local branches (merged or gone-upstream); never deletes current/protected/unmerged work without confirmation. |
+| [**commit**](commit) | `commit` | Compose and create a local Conventional Commit; validates the message and never pushes. |
+| [**prprep**](prprep) | `prprep` | Draft a PR description + checklist from the diff. Does **not** create the PR or push. |
+| [**changelog**](changelog) | `changelog` | Generate a Keep a Changelog-style changelog from Conventional Commits; dry-run unless `-Write`. |
 
 ## Installing tools
 

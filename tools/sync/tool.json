@@ -1,0 +1,9 @@
+{
+  "name": "sync",
+  "command": "sync",
+  "script": "sync.ps1",
+  "version": "1.0.0",
+  "summary": "Preview and safely update the current git branch.",
+  "description": "A safe current-branch updater that previews ahead/behind state, fetches origin when available, fast-forwards from upstream by default, optionally rebases or merges a base branch, and never pushes or forces.",
+  "requires": "PowerShell 7+ (pwsh) and git on PATH"
+}

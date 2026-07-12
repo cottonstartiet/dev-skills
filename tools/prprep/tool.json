@@ -1,0 +1,9 @@
+{
+  "name": "prprep",
+  "command": "prprep",
+  "script": "prprep.ps1",
+  "version": "1.0.0",
+  "summary": "Draft a PR description and checklist from the diff; does NOT create the PR.",
+  "description": "A standalone PowerShell CLI that summarizes the current branch versus a base branch, groups Conventional Commit messages, lists changed files, and writes a Markdown PR_DESCRIPTION.md draft. It never creates pull requests, never pushes, and never changes git branch state.",
+  "requires": "PowerShell 7+ (pwsh) and git on PATH"
+}

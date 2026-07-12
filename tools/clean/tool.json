@@ -1,0 +1,9 @@
+{
+  "name": "clean",
+  "command": "clean",
+  "script": "clean.ps1",
+  "version": "1.0.0",
+  "summary": "Report and prune stale local git branches safely.",
+  "description": "A local branch cleanup helper that lists branches already merged into a base branch or whose upstream is gone, then optionally deletes only safe candidates. It never deletes the current or protected branches, fetches with prune first, and guards force deletion with typed confirmation.",
+  "requires": "PowerShell 7+ (pwsh) and git on PATH"
+}
