@@ -162,6 +162,7 @@ dev-skills/
 │       ├── README.md
 │       └── tests/
 ├── raw/                             # staging area for skills not yet packaged
+├── specs/                           # design specs & roadmap proposals (pre-implementation)
 └── README.md
 ```
 
@@ -172,6 +173,8 @@ dev-skills/
 - Each **tool** folder under `tools/` has a `tool.json` manifest (declaring its `command` and
   `script`) and a `README.md`; `tools/install.ps1` discovers and installs them.
 - **`raw/`** holds imported skills that have not yet been packaged into plugins.
+- **`specs/`** holds design specs and roadmap proposals describing what we intend to build and why,
+  before a plugin/tool is implemented (see [`specs/README.md`](specs/README.md)).
 
 ---
 
