@@ -5,8 +5,8 @@
     "version": "0.1.0"
   },
   "owner": {
-    "name": "cottonstartiet",
-    "email": "cottonstartiet@users.noreply.github.com"
+    "name": "aseemgaurav",
+    "email": ""
   },
   "plugins": [
     {
@@ -15,8 +15,8 @@
       "version": "1.0.0",
       "description": "Guided four-stage development workflow (Understand -> Plan -> Implement -> Review) that takes a task brief, clarifies requirements, hands off to plan mode, drives the implementation, and runs a review.",
       "author": {
-        "name": "cottonstartiet",
-        "email": "cottonstartiet@users.noreply.github.com"
+        "name": "aseemgaurav",
+        "email": ""
       },
       "keywords": [
         "workflow",
@@ -34,8 +34,8 @@
       "version": "1.0.0",
       "description": "Performs deep codebase, architecture, or general-purpose analysis from a user prompt and generates a polished, self-contained light-theme HTML report of the findings.",
       "author": {
-        "name": "cottonstartiet",
-        "email": "cottonstartiet@users.noreply.github.com"
+        "name": "aseemgaurav",
+        "email": ""
       },
       "keywords": [
         "analysis",
