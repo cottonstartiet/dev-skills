@@ -26,10 +26,7 @@ Understand the user's prompt, perform an extensive multi-faceted analysis of the
    - **Subject**: What should be analyzed? (a service, folder, feature, pattern, concept)
    - **Depth**: Quick overview or deep investigation?
    - **Angle**: Architecture? Code quality? Dependencies? Implementation approach? Security? Performance?
-2. If the request is ambiguous or broad, use the `ask-questions` tool to clarify:
-   - What specific area or service to focus on
-   - What aspects matter most (architecture, code patterns, quality, security, performance)
-   - Whether to include implementation recommendations
+2. If the request does not specify at least two of the following — subject, depth, and angle — use the `ask-questions` tool to ask 1-3 targeted questions before proceeding.
 3. Establish a clear analysis plan before proceeding.
 
 ### Phase 2 — Extensive Analysis
@@ -59,6 +56,8 @@ Perform a thorough exploration. Use **subagents** (with `agentName: "Explore"`) 
 - Call out risks, prerequisites, and sequencing concerns
 
 Collect **concrete evidence**: file paths, class names, method signatures, line numbers, code snippets. Every finding must be grounded in actual code — never fabricate.
+
+If no relevant files or code can be located for the requested subject, stop and inform the user with a specific message explaining what was searched and what was not found, then ask for clarification before generating a report.
 
 ### Phase 3 — Generate HTML Report
 
@@ -248,6 +247,7 @@ Generate the report using the template structure below. The report must be:
    - On Windows: `Start-Process "{{full_path_to_html}}"`
    - On macOS: `open "{{full_path_to_html}}"`
    - On Linux: `xdg-open "{{full_path_to_html}}"`
+   - If the browser-launch command fails or the path cannot be resolved, inform the user of the saved file path and ask them to open it manually.
 3. Confirm to the user that the report is ready and where it was saved.
 
 ## Guidelines
