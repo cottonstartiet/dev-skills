@@ -1,0 +1,22 @@
+{
+  "name": "explain-change",
+  "description": "Produces a rich, interactive HTML explanation of a code change, diff, branch, or PR — with deep Background, Intuition (diagrams + toy examples), a Code walkthrough, and an interactive multiple-choice Quiz.",
+  "version": "1.0.0",
+  "author": {
+    "name": "aseemgaurav",
+    "email": ""
+  },
+  "license": "MIT",
+  "keywords": [
+    "explanation",
+    "code-review",
+    "diff",
+    "pull-request",
+    "onboarding",
+    "html",
+    "developer-tools"
+  ],
+  "skills": [
+    "skills/"
+  ]
+}

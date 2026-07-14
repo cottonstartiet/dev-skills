@@ -47,6 +47,26 @@
         "developer-tools"
       ],
       "category": "developer-tools"
+    },
+    {
+      "name": "explain-change",
+      "source": "./plugins/explain-change",
+      "version": "1.0.0",
+      "description": "Produces a rich, interactive HTML explanation of a code change, diff, branch, or PR — with a deep Background, an Intuition section (diagrams + toy examples), a Code walkthrough, and an interactive multiple-choice Quiz.",
+      "author": {
+        "name": "aseemgaurav",
+        "email": ""
+      },
+      "keywords": [
+        "explanation",
+        "code-review",
+        "diff",
+        "pull-request",
+        "onboarding",
+        "html",
+        "developer-tools"
+      ],
+      "category": "developer-tools"
     }
   ]
 }

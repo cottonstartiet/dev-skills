@@ -3,8 +3,8 @@
   "description": "Performs deep codebase, architecture, or general-purpose analysis from a user prompt and generates a polished, self-contained light-theme HTML report of the findings.",
   "version": "1.0.0",
   "author": {
-    "name": "cottonstartiet",
-    "email": "cottonstartiet@users.noreply.github.com"
+    "name": "aseemgaurav",
+    "email": ""
   },
   "license": "MIT",
   "keywords": [

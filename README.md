@@ -18,6 +18,7 @@ shell and run directly (see [Tools](#-tools)).
 |-------|--------|--------------|
 | [**codev**](plugins/codev) | `codev` | Guides a coding task end-to-end through a four-stage workflow — **Understand → Plan → Implement → Review** — with explicit gates between stages. |
 | [**deep-analysis**](plugins/deep-analysis) | `deep-analysis` | Performs a deep codebase/architecture analysis from a prompt and produces a polished, self-contained **HTML report** of the findings. |
+| [**explain-change**](plugins/explain-change) | `explain-change` | Turns a code change, diff, branch, or PR into a self-contained **interactive HTML explanation** — Background, Intuition (diagrams + toy examples), Code walkthrough, and a five-question interactive Quiz. |
 
 ### codev — Guided Development Workflow
 
@@ -42,6 +43,22 @@ when the request is ambiguous, and generates a **light-theme, self-contained HTM
 in real files and code, then opens it in your browser.
 **Invoke:** "analyze the auth flow in the payments service", "architecture review of this repo",
 "produce an HTML report of the dependency graph".
+
+### explain-change — Interactive Code-Change Explanation
+
+Takes a change set — uncommitted work, a branch vs. its base, a commit range, or a PR — and
+reconstructs its intent from the diff and surrounding code, then generates a single, self-contained
+**interactive HTML page** that teaches what changed and why:
+
+1. **Background** — a deep, skippable beginner primer, then a narrow background tied to the change.
+2. **Intuition** — the core idea with toy data and reusable HTML diagrams (UI mocks + data-flow
+   diagrams with example data).
+3. **Code** — a logically grouped walkthrough of the actual changes, grounded in real files.
+4. **Quiz** — five medium-difficulty, interactive multiple-choice questions with per-answer feedback.
+
+It's read-only — it never creates/merges PRs, pushes, deploys, or edits source. The file is saved
+outside the repo with a `YYYY-MM-DD-` prefix (kept out of version control) and opened in your browser.
+**Invoke:** "explain this PR", "walk me through the diff on my branch", "explain PR #128".
 
 ---
 
@@ -152,6 +169,12 @@ dev-skills/
 │       ├── README.md
 │       └── skills/
 │           └── deep-analysis/
+│               └── SKILL.md
+│   └── explain-change/
+│       ├── plugin.json
+│       ├── README.md
+│       └── skills/
+│           └── explain-change/
 │               └── SKILL.md
 ├── tools/                           # standalone CLI tools (installed into your shell)
 │   ├── install.ps1                  #   menu-driven installer
