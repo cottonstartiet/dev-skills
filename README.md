@@ -19,6 +19,7 @@ shell and run directly (see [Tools](#-tools)).
 | [**codev**](plugins/codev) | `codev` | Guides a coding task end-to-end through a four-stage workflow — **Understand → Plan → Implement → Review** — with explicit gates between stages. |
 | [**deep-analysis**](plugins/deep-analysis) | `deep-analysis` | Performs a deep codebase/architecture analysis from a prompt and produces a polished, self-contained **HTML report** of the findings. |
 | [**explain-change**](plugins/explain-change) | `explain-change` | Turns a code change, diff, branch, or PR into a self-contained **interactive HTML explanation** — Background, Intuition (diagrams + toy examples), Code walkthrough, and a five-question interactive Quiz. |
+| [**desktop-notify**](plugins/desktop-notify) | `desktop-notify` | *(Hook-based — no invoke phrase.)* Fires a native **desktop notification** when Copilot is waiting on you — a permission approval, an idle question/clarification, or a finished turn. Cross-platform, no dependencies, quiet while your terminal is focused. |
 
 ### codev — Guided Development Workflow
 
@@ -59,6 +60,23 @@ reconstructs its intent from the diff and surrounding code, then generates a sin
 It's read-only — it never creates/merges PRs, pushes, deploys, or edits source. The file is saved
 outside the repo with a `YYYY-MM-DD-` prefix (kept out of version control) and opened in your browser.
 **Invoke:** "explain this PR", "walk me through the diff on my branch", "explain PR #128".
+
+### desktop-notify — Desktop Notifications When Copilot Waits
+
+A **hook-based** plugin (no skill, no slash command) that fires a native **desktop notification**
+whenever Copilot CLI is waiting on you, so you can step away and get pulled back the moment you're
+needed. It notifies on three hook events:
+
+- **permission** — a tool/command approval is pending,
+- **idle** — Copilot is waiting for your next input, question, or clarification,
+- **stop** — the current turn finished.
+
+Notifications use each OS's built-in notifier (**no third-party dependencies**): Windows toast (with
+a tray-balloon fallback), macOS `osascript`, and Linux `notify-send`. On Windows it **stays quiet
+while your terminal is focused**, debounces duplicate/background events, and always fails quietly so
+it can never block a Copilot turn. Configure via `COPILOT_NOTIFY_DEBOUNCE`, `COPILOT_NOTIFY_ALWAYS`,
+and `COPILOT_NOTIFY_DEBUG`.
+**Invoke:** none — it runs automatically in the background once installed.
 
 ---
 
@@ -176,6 +194,14 @@ dev-skills/
 │       └── skills/
 │           └── explain-change/
 │               └── SKILL.md
+│   └── desktop-notify/                 # a hook-based plugin (no skill)
+│       ├── plugin.json                 #   manifest (declares "hooks")
+│       ├── README.md
+│       ├── hooks/
+│       │   └── hooks.json              #   hook event -> command bindings
+│       └── scripts/
+│           ├── notify.js               #   cross-platform dispatcher
+│           └── notify.ps1              #   Windows toast + focus detection
 ├── tools/                           # standalone CLI tools (installed into your shell)
 │   ├── install.ps1                  #   menu-driven installer
 │   ├── README.md

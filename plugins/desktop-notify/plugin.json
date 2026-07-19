@@ -1,0 +1,20 @@
+{
+  "name": "desktop-notify",
+  "description": "Sends a native desktop notification when Copilot is waiting on you — for a permission approval, an idle question/clarification, or when it finishes a turn. Cross-platform (Windows/macOS/Linux), no third-party dependencies, and suppressed while your terminal is focused.",
+  "version": "1.0.0",
+  "author": {
+    "name": "aseemgaurav",
+    "email": ""
+  },
+  "license": "MIT",
+  "keywords": [
+    "notifications",
+    "desktop",
+    "toast",
+    "hooks",
+    "permission",
+    "productivity",
+    "developer-tools"
+  ],
+  "hooks": "hooks/hooks.json"
+}
